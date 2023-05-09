@@ -1,3 +1,4 @@
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 
@@ -10,12 +11,14 @@ if (feedbackWidgetRoot) {
   const issueTypeId = feedbackWidgetRoot.getAttribute('data-issue-type-id')
 
   ReactDOM.render(
-    <App
-      projectId={projectId}
-      assigneeId={assigneeId}
-      apiUrl={apiUrl}
-      issueTypeId={issueTypeId}
-    />,
+    <React.StrictMode>
+      <App
+        projectId={projectId}
+        assigneeId={assigneeId}
+        apiUrl={apiUrl}
+        issueTypeId={issueTypeId}
+      />
+    </React.StrictMode>,
     feedbackWidgetRoot
   )
 }
